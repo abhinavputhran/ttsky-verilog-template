@@ -17,16 +17,9 @@ module tt_um_example (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
+  assign uio_out[7:1] = 7'b0;
   assign uio_oe[0] = 1'b1; // error is output
-  assign uio_oe[1] = 1'b0; // finish input
-  assign uio_oe[2] = 1'b0;
-  assign uio_oe[3] = 1'b0;
-  assign uio_oe[4] = 1'b0;
-  assign uio_oe[5] = 1'b0;
-  assign uio_oe[6] = 1'b0;
-  assign uio_oe[7] = 1'b0;
+  assign uio_oe[7:1] = 7'b0;
 
   RangeFinder #(.WIDTH(8)) inst (.data_in(ui_in),
                                  .clock(clk),
